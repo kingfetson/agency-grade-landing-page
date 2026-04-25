@@ -1,4 +1,4 @@
-```javascript
+
 /* ============================================
    BREEZE LUX CLEANERS - PREMIUM INTERACTIONS
    Agency-grade JavaScript | Vanilla JS
@@ -528,4 +528,3 @@ window.breezeLux = {
   pricing: pricingData,
   testimonials: testimonials
 };
-```
