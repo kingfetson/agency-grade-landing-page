@@ -6,13 +6,16 @@
   <title>Breeze Lux Cleaners | Luxury Cleaning & Laundry – Nairobi's Premium Service</title>
   <meta name="description" content="Premium eco-luxury cleaning & laundry services in Nairobi. White glove treatment for homes & businesses.">
   
-  <!-- Replace current font link with this -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-</noscript>
+  <!-- Preconnect to critical origins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  
+  <!-- Preload critical fonts -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  </noscript>
   
   <!-- Critical CSS inline for above-the-fold content -->
   <style>
@@ -23,17 +26,17 @@
     .loader-hidden{opacity:0;visibility:hidden;pointer-events:none}
     .navbar{position:fixed;top:20px;left:50%;transform:translateX(-50%);width:90%;max-width:1280px;background:rgba(255,255,255,.96);backdrop-filter:blur(16px);border-radius:80px;z-index:1000;box-shadow:0 4px 20px rgba(0,0,0,.05)}
     .container{max-width:1280px;margin:0 auto;padding:0 2rem}
-    .btn-primary{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.5rem;border-radius:60px;font-weight:600;background:#22C55E;color:#fff;text-decoration:none}
+    .btn-primary{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.5rem;border-radius:60px;font-weight:600;background:#16a34a;color:#fff;text-decoration:none}
+    .btn-primary:hover{background:#128a3a}
     .gradient-text{background:linear-gradient(135deg,#22C55E,#16a34a);background-clip:text;-webkit-background-clip:text;color:transparent}
-    .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0)}
+    .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}
+    .services-grid, .pricing-grid, .testimonial-wrapper{min-height:400px;contain:layout style paint}
+    img,video,iframe{max-width:100%;height:auto}
   </style>
   
   <!-- Defer non-critical CSS -->
   <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="style.css"></noscript>
-  
-  <!-- Font with display swap -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
   <!-- Defer Font Awesome -->
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -49,7 +52,7 @@
   </div>
 </div>
 
-<!-- Navigation (minified for performance) -->
+<!-- Navigation -->
 <nav class="navbar" id="navbar" aria-label="Main navigation">
   <div class="nav-container">
     <div class="logo"><i class="fas fa-feather-alt" aria-hidden="true"></i><span>BREEZE LUX</span></div>
@@ -65,7 +68,7 @@
 </nav>
 
 <main>
-  <!-- Hero Section - Optimized -->
+  <!-- Hero Section -->
   <section id="home" class="hero">
     <div class="container hero-grid">
       <div class="hero-content">
@@ -95,7 +98,7 @@
         <div class="section-badge">our expertise</div>
         <h2>Tailored solutions<br>for every surface</h2>
       </div>
-      <div class="services-grid" id="servicesGrid"></div>
+      <div class="services-grid" id="servicesGrid" style="min-height: 400px;"></div>
     </div>
   </section>
 
@@ -106,11 +109,11 @@
         <div class="section-badge">investment</div>
         <h2>Transparent <span class="gradient-text">pricing</span></h2>
       </div>
-      <div class="pricing-grid" id="pricingCards"></div>
+      <div class="pricing-grid" id="pricingCards" style="min-height: 500px;"></div>
     </div>
   </section>
 
-  <!-- Testimonials -->
+  <!-- Testimonials Section -->
   <section id="testimonials" class="testimonials">
     <div class="container">
       <div class="section-header">
@@ -121,167 +124,180 @@
         <div class="testimonial-track" id="testiTrack"></div>
         <div class="testimonial-controls">
           <button class="testimonial-nav" id="prevBtn" aria-label="Previous testimonial"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
-          <div class="testimonial-dots" id="testiDots"></div>
+          <div class="testimonial-dots" id="testiDots" role="tablist" aria-label="Testimonial navigation"></div>
           <button class="testimonial-nav" id="nextBtn" aria-label="Next testimonial"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
         </div>
       </div>
     </div>
   </section>
 
- <!-- ========== LEAD CAPTURE + CONTACT - PROFESSIONALLY FORMATTED ========== -->
-<section id="contact-section" class="contact">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-badge">get in touch</div>
-      <h2>Request a <span class="gradient-text">bespoke quote</span></h2>
-      <p class="section-subtitle">Fill out the form below and our concierge will respond within 30 minutes</p>
-    </div>
-    
-    <div class="contact-grid">
-      <!-- Contact Form -->
-      <div class="contact-form-wrapper">
-        <h3>Start Your <span class="gradient-text">Journey</span></h3>
-        <form id="leadForm" class="premium-form">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="fullName">Full Name <span class="required">*</span></label>
-              <div class="input-with-icon">
-                <i class="fas fa-user" aria-hidden="true"></i>
-                <input type="text" id="fullName" name="fullName" placeholder="John Doe" required>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="phoneNumber">Phone Number <span class="required">*</span></label>
-              <div class="input-with-icon">
-                <i class="fas fa-phone" aria-hidden="true"></i>
-                <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="+254 700 000 000" required>
-              </div>
-            </div>
-          </div>
-          
-          <div class="form-row">
-            <div class="form-group">
-              <label for="emailAddress">Email Address</label>
-              <div class="input-with-icon">
-                <i class="fas fa-envelope" aria-hidden="true"></i>
-                <input type="email" id="emailAddress" name="emailAddress" placeholder="john@example.com">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="serviceSelect">Select Service <span class="required">*</span></label>
-              <div class="input-with-icon">
-                <i class="fas fa-broom" aria-hidden="true"></i>
-                <select id="serviceSelect" name="service" required>
-                  <option value="">Choose a service</option>
-                  <option>Home Deep Clean</option>
-                  <option>Sofa / Mattress Cleaning</option>
-                  <option>Post-Construction</option>
-                  <option>Laundry Services</option>
-                  <option>Commercial Cleaning</option>
-                  <option>Event Cleanup</option>
-                </select>
-              </div>
-            </div>
-          </div>
-          
-          <div class="form-group">
-            <label for="propertyAddress">Property Address</label>
-            <div class="input-with-icon">
-              <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-              <input type="text" id="propertyAddress" name="address" placeholder="Westlands, Nairobi">
-            </div>
-          </div>
-          
-          <div class="form-group">
-            <label for="message">Additional Details</label>
-            <textarea id="message" name="message" rows="3" placeholder="Tell us about your specific requirements..."></textarea>
-          </div>
-          
-          <button type="submit" class="btn-primary btn-full">
-            <i class="fas fa-paper-plane" aria-hidden="true"></i>
-            Send Request
-            <i class="fas fa-arrow-right" aria-hidden="true"></i>
-          </button>
-          
-          <p style="font-size: 0.8rem; color: var(--gray-600); text-align: center; margin-top: 1rem;">
-            <i class="fas fa-lock" aria-hidden="true"></i> Your information is secure and confidential
-          </p>
-        </form>
+  <!-- Contact Section -->
+  <section id="contact-section" class="contact">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">get in touch</div>
+        <h2>Request a <span class="gradient-text">bespoke quote</span></h2>
+        <p class="section-subtitle">Fill out the form below and our concierge will respond within 30 minutes</p>
       </div>
       
-      <!-- Contact Info -->
-      <div class="contact-info">
-        <h3>Connect With Us</h3>
-        <div class="contact-details">
-          <p>
-            <i class="fab fa-whatsapp" aria-hidden="true"></i>
-            <span>+254 758 966 762</span>
-          </p>
-          <p>
-            <i class="fas fa-phone-alt" aria-hidden="true"></i>
-            <span>+254 700 000 000</span>
-          </p>
-          <p>
-            <i class="fas fa-envelope" aria-hidden="true"></i>
-            <span>hello@breezelux.com</span>
-          </p>
-          <p>
-            <i class="fas fa-clock" aria-hidden="true"></i>
-            <span>24/7 Customer Support</span>
-          </p>
-          <p>
-            <i class="fas fa-map-pin" aria-hidden="true"></i>
-            <span>Westlands, Nairobi, Kenya</span>
-          </p>
+      <div class="contact-grid">
+        <!-- Contact Form -->
+        <div class="contact-form-wrapper">
+          <h3>Start Your <span class="gradient-text">Journey</span></h3>
+          <form id="leadForm" class="premium-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fullName">Full Name <span class="required">*</span></label>
+                <div class="input-with-icon">
+                  <i class="fas fa-user" aria-hidden="true"></i>
+                  <input type="text" id="fullName" name="fullName" placeholder="John Doe" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="phoneNumber">Phone Number <span class="required">*</span></label>
+                <div class="input-with-icon">
+                  <i class="fas fa-phone" aria-hidden="true"></i>
+                  <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="+254 700 000 000" required>
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="emailAddress">Email Address</label>
+                <div class="input-with-icon">
+                  <i class="fas fa-envelope" aria-hidden="true"></i>
+                  <input type="email" id="emailAddress" name="emailAddress" placeholder="john@example.com">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="serviceSelect">Select Service <span class="required">*</span></label>
+                <div class="input-with-icon">
+                  <i class="fas fa-broom" aria-hidden="true"></i>
+                  <select id="serviceSelect" name="service" required>
+                    <option value="">Choose a service</option>
+                    <option>Home Deep Clean</option>
+                    <option>Sofa / Mattress Cleaning</option>
+                    <option>Post-Construction</option>
+                    <option>Laundry Services</option>
+                    <option>Commercial Cleaning</option>
+                    <option>Event Cleanup</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="propertyAddress">Property Address</label>
+              <div class="input-with-icon">
+                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                <input type="text" id="propertyAddress" name="address" placeholder="Westlands, Nairobi">
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Additional Details</label>
+              <textarea id="message" name="message" rows="3" placeholder="Tell us about your specific requirements..."></textarea>
+            </div>
+            
+            <button type="submit" class="btn-primary btn-full">
+              <i class="fas fa-paper-plane" aria-hidden="true"></i>
+              Send Request
+              <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </button>
+            
+            <p style="font-size: 0.8rem; color: var(--gray-600); text-align: center; margin-top: 1rem;">
+              <i class="fas fa-lock" aria-hidden="true"></i> Your information is secure and confidential
+            </p>
+          </form>
         </div>
         
-        <div class="map-placeholder">
-          <i class="fas fa-map-marked-alt" aria-hidden="true"></i>
-          <span>Premium Service Coverage Area</span>
-          <small style="display: block; margin-top: 0.5rem; opacity: 0.8;">Westlands • Karen • Lavington • Kilimani • Runda • CBD</small>
-        </div>
-        
-        <div style="margin-top: 1.5rem; text-align: center;">
-          <p style="font-size: 0.85rem; opacity: 0.9;">
-            <i class="fas fa-check-circle" aria-hidden="true"></i> Free quote within 30 minutes
-          </p>
-          <p style="font-size: 0.85rem; opacity: 0.9; margin-top: 0.5rem;">
-            <i class="fas fa-check-circle" aria-hidden="true"></i> No hidden fees
-          </p>
+        <!-- Contact Info -->
+        <div class="contact-info">
+          <h3>Connect With Us</h3>
+          <div class="contact-details">
+            <p>
+              <i class="fab fa-whatsapp" aria-hidden="true"></i>
+              <span>+254 758 966 762</span>
+            </p>
+            <p>
+              <i class="fas fa-phone-alt" aria-hidden="true"></i>
+              <span>+254 700 000 000</span>
+            </p>
+            <p>
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+              <span>hello@breezelux.com</span>
+            </p>
+            <p>
+              <i class="fas fa-clock" aria-hidden="true"></i>
+              <span>24/7 Customer Support</span>
+            </p>
+            <p>
+              <i class="fas fa-map-pin" aria-hidden="true"></i>
+              <span>Westlands, Nairobi, Kenya</span>
+            </p>
+          </div>
+          
+          <div class="map-placeholder">
+            <i class="fas fa-map-marked-alt" aria-hidden="true"></i>
+            <span>Premium Service Coverage Area</span>
+            <small style="display: block; margin-top: 0.5rem; opacity: 0.8;">Westlands • Karen • Lavington • Kilimani • Runda • CBD</small>
+          </div>
+          
+          <div style="margin-top: 1.5rem; text-align: center;">
+            <p style="font-size: 0.85rem; opacity: 0.9;">
+              <i class="fas fa-check-circle" aria-hidden="true"></i> Free quote within 30 minutes
+            </p>
+            <p style="font-size: 0.85rem; opacity: 0.9; margin-top: 0.5rem;">
+              <i class="fas fa-check-circle" aria-hidden="true"></i> No hidden fees
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+</main>
 
 <!-- Footer -->
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="footer-logo"><i class="fas fa-feather-alt"></i> BREEZE LUX</div>
+        <div class="footer-logo"><i class="fas fa-feather-alt" aria-hidden="true"></i> BREEZE LUX</div>
         <p>Redefining cleanliness with white-glove service.</p>
         <div class="social-links">
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" aria-label="Follow us on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i><span class="visually-hidden">Instagram</span></a>
+          <a href="#" aria-label="Follow us on Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i><span class="visually-hidden">Facebook</span></a>
+          <a href="#" aria-label="Connect on LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i><span class="visually-hidden">LinkedIn</span></a>
+          <a href="#" aria-label="Follow us on Twitter"><i class="fab fa-x-twitter" aria-hidden="true"></i><span class="visually-hidden">Twitter</span></a>
         </div>
       </div>
       <div class="footer-links">
         <h3>Services</h3>
-        <ul><li><a href="#services-section">Laundry</a></li><li><a href="#services-section">Deep Cleaning</a></li></ul>
+        <ul>
+          <li><a href="#services-section">Laundry</a></li>
+          <li><a href="#services-section">Deep Cleaning</a></li>
+        </ul>
       </div>
       <div class="footer-links">
         <h3>Support</h3>
-        <ul><li><a href="#">FAQs</a></li><li><a href="#">Privacy Policy</a></li></ul>
+        <ul>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
       </div>
     </div>
-    <div class="footer-bottom"><p>© 2025 Breeze Lux Cleaners</p></div>
+    <div class="footer-bottom">
+      <p>© 2025 Breeze Lux Cleaners — Luxury Redefined. All rights reserved.</p>
+    </div>
   </div>
 </footer>
 
-<button class="floating-wa" id="floatWA" aria-label="WhatsApp chat"><i class="fab fa-whatsapp"></i><span>Chat</span></button>
+<!-- Floating WhatsApp Button -->
+<button class="floating-wa" id="floatWA" aria-label="WhatsApp 24/7 concierge - click to chat">
+  <i class="fab fa-whatsapp" aria-hidden="true"></i>
+  <span>24/7 Concierge</span>
+</button>
 
 <!-- Defer all JavaScript -->
 <script src="script.js" defer></script>
