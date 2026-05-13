@@ -90,24 +90,6 @@ const BREEZE_LUX_CONFIG = {
         description: "Eliminate allergens, dust mites & stains",
         rating: 5,
         popular: true
-      },
-      {
-        id: "post-event",
-        name: "Post Event",
-        icon: "fas fa-calendar-check",
-        price: "from KSh 8,000",
-        description: "Same-day cleanup for parties and gatherings",
-        rating: 5,
-        popular: false
-      },
-      {
-        id: "post-construction",
-        name: "Post Construction",
-        icon: "fas fa-hard-hat",
-        price: "from KSh 12,000",
-        description: "Industrial-grade dust removal & sanitization",
-        rating: 5,
-        popular: false
       }
     ]
   },
@@ -128,28 +110,6 @@ const BREEZE_LUX_CONFIG = {
       { target: 100, label: "Satisfaction %", suffix: "%" },
       { target: 48, label: "Min Response", suffix: "" },
       { target: 250, label: "5-Star Reviews", suffix: "+" }
-    ]
-  },
-
-  // ========== SERVICE TYPES (Commercial/Residential) ==========
-  serviceTypes: {
-    title: "Serving",
-    titleHighlight: "Home & Business",
-    items: [
-      {
-        type: "residential",
-        icon: "fas fa-home",
-        title: "Residential",
-        description: "Deep clean, move-out, recurring luxury cleaning for discerning homeowners.",
-        ctaText: "Learn more →"
-      },
-      {
-        type: "commercial",
-        icon: "fas fa-building",
-        title: "Commercial",
-        description: "Offices, retail, post-construction, and event cleaning for businesses.",
-        ctaText: "Learn more →"
-      }
     ]
   },
 
@@ -222,7 +182,6 @@ const BREEZE_LUX_CONFIG = {
         location: "Karen, Nairobi",
         rating: 5,
         text: "Absolutely stunning results. My home smells like a 5-star hotel. Professional, punctual, and meticulous.",
-        avatar: null,
         verified: true,
         date: "March 2025"
       },
@@ -232,7 +191,6 @@ const BREEZE_LUX_CONFIG = {
         location: "Westlands",
         rating: 5,
         text: "Best cleaning agency in Nairobi. They transformed my office after construction — immaculate and efficient.",
-        avatar: null,
         verified: true,
         date: "February 2025"
       },
@@ -242,59 +200,11 @@ const BREEZE_LUX_CONFIG = {
         location: "Lavington",
         rating: 5,
         text: "Post-construction mess turned spotless. Worth every shilling. Will definitely book again!",
-        avatar: null,
         verified: true,
         date: "January 2025"
-      },
-      {
-        id: 4,
-        name: "James Omondi",
-        location: "Runda",
-        rating: 5,
-        text: "The sofa cleaning service is magic! My 5-year-old couch looks brand new. Highly recommend.",
-        avatar: null,
-        verified: false,
-        date: "December 2024"
-      },
-      {
-        id: 5,
-        name: "Grace Wanjiru",
-        location: "Kilimani",
-        rating: 5,
-        text: "Punctual, thorough, and incredibly professional. My go-to cleaning service in Nairobi.",
-        avatar: null,
-        verified: true,
-        date: "November 2024"
       }
     ],
     autoSlideInterval: 5000
-  },
-
-  // ========== PROCESS STEPS ==========
-  process: {
-    badge: "how it works",
-    title: "Simple",
-    titleHighlight: "3-step",
-    steps: [
-      {
-        number: "01",
-        icon: "fas fa-calendar-plus",
-        title: "Book",
-        description: "WhatsApp or online form — 2 minutes"
-      },
-      {
-        number: "02",
-        icon: "fas fa-brush",
-        title: "We Clean",
-        description: "Specialist team arrives fully equipped"
-      },
-      {
-        number: "03",
-        icon: "fas fa-smile-wink",
-        title: "Enjoy",
-        description: "Sparkling guarantee & follow-up"
-      }
-    ]
   },
 
   // ========== FAQ SECTION ==========
@@ -321,10 +231,6 @@ const BREEZE_LUX_CONFIG = {
       {
         question: "What if I'm not satisfied?",
         answer: "We offer a 100% satisfaction guarantee. If you're not happy, we'll re-clean at no extra cost."
-      },
-      {
-        question: "Do I need to be home?",
-        answer: "Not necessarily. We can arrange key pickup or access codes for your convenience."
       }
     ]
   },
@@ -333,11 +239,6 @@ const BREEZE_LUX_CONFIG = {
   contact: {
     formTitle: "Request a",
     formTitleHighlight: "bespoke quote",
-    formFields: [
-      { type: "text", placeholder: "Full name", required: true, name: "name" },
-      { type: "email", placeholder: "Email address", required: false, name: "email" },
-      { type: "tel", placeholder: "Phone number", required: true, name: "phone" }
-    ],
     serviceOptions: [
       "Select Service",
       "Home Deep Clean",
@@ -350,12 +251,7 @@ const BREEZE_LUX_CONFIG = {
     submitButton: {
       text: "Send Request",
       icon: "fas fa-paper-plane"
-    },
-    contactDetails: [
-      { icon: "fab fa-whatsapp", text: "+254 758 966 762", action: "whatsapp" },
-      { icon: "fas fa-envelope", text: "hello@breezelux.com", action: "email" },
-      { icon: "fas fa-map-pin", text: "Nairobi, Kenya — Westlands", action: "map" }
-    ]
+    }
   },
 
   // ========== CTA BANNER ==========
@@ -371,10 +267,10 @@ const BREEZE_LUX_CONFIG = {
   footer: {
     description: "Redefining cleanliness with white-glove service and eco-luxury standards.",
     socialLinks: [
-      { platform: "instagram", icon: "fab fa-instagram", url: "https://instagram.com/breezeluxcleaners" },
-      { platform: "facebook", icon: "fab fa-facebook-f", url: "https://facebook.com/breezeluxcleaners" },
-      { platform: "linkedin", icon: "fab fa-linkedin-in", url: "https://linkedin.com/company/breezelux" },
-      { platform: "twitter", icon: "fab fa-x-twitter", url: "https://twitter.com/breezelux" }
+      { platform: "instagram", icon: "fab fa-instagram", url: "#" },
+      { platform: "facebook", icon: "fab fa-facebook-f", url: "#" },
+      { platform: "linkedin", icon: "fab fa-linkedin-in", url: "#" },
+      { platform: "twitter", icon: "fab fa-x-twitter", url: "#" }
     ],
     footerLinks: {
       services: [
@@ -395,11 +291,7 @@ const BREEZE_LUX_CONFIG = {
       subtitle: "Subscribe for exclusive offers",
       placeholder: "Your email",
       buttonIcon: "fas fa-arrow-right"
-    },
-    trustBadges: [
-      { icon: "fas fa-shield-alt", text: "Insured" },
-      { icon: "fas fa-leaf", text: "Eco-Friendly" }
-    ]
+    }
   },
 
   // ========== FLOATING WHATSAPP ==========
@@ -407,27 +299,10 @@ const BREEZE_LUX_CONFIG = {
     text: "24/7 Concierge",
     icon: "fab fa-whatsapp fa-lg",
     message: "Hello! I'd like to book a premium cleaning service"
-  },
-
-  // ========== SEO & META ==========
-  seo: {
-    title: "Breeze Lux Cleaners | Luxury Cleaning & Laundry – Nairobi's Premium Service",
-    description: "Premium eco-luxury cleaning & laundry services in Nairobi. White glove treatment for homes & businesses. Book your elite cleaning experience today.",
-    keywords: "cleaning services Nairobi, luxury cleaning, laundry services, sofa cleaning, mattress cleaning, post-construction cleaning",
-    ogImage: "https://breezelux.com/og-image.jpg"
   }
 };
 
-// ========== EXPORT FOR USE IN SCRIPT.JS ==========
-// If using ES6 modules (uncomment the line below when using modules)
-// export default BREEZE_LUX_CONFIG;
-
-// For global access (available in script.js)
+// Export for global access
 if (typeof window !== 'undefined') {
   window.BREEZE_LUX_CONFIG = BREEZE_LUX_CONFIG;
-}
-
-// For Node.js environment (if using build tools)
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports = BREEZE_LUX_CONFIG;
 }
