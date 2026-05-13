@@ -4,16 +4,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Breeze Lux Cleaners | Luxury Cleaning & Laundry – Nairobi's Premium Service</title>
-  <meta name="description" content="Premium eco-luxury cleaning & laundry services in Nairobi. White glove treatment for homes & businesses. Book your elite cleaning experience today.">
+  <meta name="description" content="Premium eco-luxury cleaning & laundry services in Nairobi. White glove treatment for homes & businesses.">
   
-  <!-- Preconnect + Fonts -->
+  <!-- Preconnect to critical origins -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="style.css">
+  <!-- Critical CSS inline for above-the-fold content -->
+  <style>
+    /* Critical CSS - minimal styles for initial render */
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Inter',sans-serif;background:#fff;color:#111827;line-height:1.5}
+    .loader{position:fixed;top:0;left:0;width:100%;height:100%;background:#fff;z-index:10000;display:flex;align-items:center;justify-content:center;transition:opacity .3s}
+    .loader-hidden{opacity:0;visibility:hidden;pointer-events:none}
+    .navbar{position:fixed;top:20px;left:50%;transform:translateX(-50%);width:90%;max-width:1280px;background:rgba(255,255,255,.96);backdrop-filter:blur(16px);border-radius:80px;z-index:1000;box-shadow:0 4px 20px rgba(0,0,0,.05)}
+    .container{max-width:1280px;margin:0 auto;padding:0 2rem}
+    .btn-primary{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.5rem;border-radius:60px;font-weight:600;background:#22C55E;color:#fff;text-decoration:none}
+    .gradient-text{background:linear-gradient(135deg,#22C55E,#16a34a);background-clip:text;-webkit-background-clip:text;color:transparent}
+    .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0)}
+  </style>
+  
+  <!-- Defer non-critical CSS -->
+  <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="style.css"></noscript>
+  
+  <!-- Font with display swap -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Defer Font Awesome -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></noscript>
 </head>
 <body>
 
@@ -25,106 +46,57 @@
   </div>
 </div>
 
-<!-- Glassmorphism Navigation Bar -->
+<!-- Navigation (minified for performance) -->
 <nav class="navbar" id="navbar" aria-label="Main navigation">
   <div class="nav-container">
-    <div class="logo">
-      <i class="fas fa-feather-alt" aria-hidden="true"></i> 
-      <span>BREEZE LUX</span>
-    </div>
-    <button class="menu-icon" id="menuToggle" aria-label="Menu" aria-expanded="false" style="background: none; border: none;">
-      <i class="fas fa-bars" aria-hidden="true"></i>
-    </button>
+    <div class="logo"><i class="fas fa-feather-alt" aria-hidden="true"></i><span>BREEZE LUX</span></div>
+    <button class="menu-icon" id="menuToggle" aria-label="Menu" aria-expanded="false"><i class="fas fa-bars" aria-hidden="true"></i></button>
     <div class="nav-links" id="navMenu">
       <a href="#home">Home</a>
       <a href="#services-section">Services</a>
-      <a href="#work">Transform</a>
       <a href="#pricing-section">Pricing</a>
       <a href="#contact-section">Contact</a>
-      <a href="https://wa.me/254758966762" class="btn-glass btn-highlight" target="_blank" rel="noopener">
-        <i class="fab fa-whatsapp" aria-hidden="true"></i> Book Now
-      </a>
+      <a href="https://wa.me/254758966762" class="btn-glass" target="_blank" rel="noopener"><i class="fab fa-whatsapp" aria-hidden="true"></i> Book Now</a>
     </div>
   </div>
 </nav>
 
 <main>
-  <!-- ========== HERO SECTION ========== -->
+  <!-- Hero Section - Optimized -->
   <section id="home" class="hero">
     <div class="container hero-grid">
       <div class="hero-content">
-        <div class="hero-badge">
-          <i class="fas fa-star-of-life" aria-hidden="true"></i> NAIROBI'S ELITE CLEANING
-        </div>
-        <h1>
-          Where luxury meets<br>
-          <span class="gradient-text">spotless perfection</span>
-        </h1>
-        <p class="hero-description">
-          Premium cleaning & laundry for residences, offices & events. 
-          Eco-luxury service trusted by 500+ elite clients.
-        </p>
+        <div class="hero-badge"><i class="fas fa-star-of-life" aria-hidden="true"></i> NAIROBI'S ELITE CLEANING</div>
+        <h1>Where luxury meets<br><span class="gradient-text">spotless perfection</span></h1>
+        <p class="hero-description">Premium cleaning & laundry for residences, offices & events. Eco-luxury service trusted by 500+ elite clients.</p>
         <div class="hero-buttons">
-          <a href="https://wa.me/254758966762" class="btn-primary btn-large" target="_blank" rel="noopener">
-            <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp Concierge
-          </a>
-          <a href="#contact-section" class="btn-secondary btn-large">
-            Free Quote <i class="fas fa-arrow-right" aria-hidden="true"></i>
-          </a>
+          <a href="https://wa.me/254758966762" class="btn-primary btn-large" target="_blank" rel="noopener"><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp Concierge</a>
+          <a href="#contact-section" class="btn-secondary btn-large">Free Quote <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
         </div>
         <div class="hero-stats">
           <div class="stat-item"><span class="stat-number">500+</span><span class="stat-label">Projects</span></div>
-          <div class="stat-divider"></div>
           <div class="stat-item"><span class="stat-number">4.98</span><span class="stat-label">★ Reviews</span></div>
-          <div class="stat-divider"></div>
           <div class="stat-item"><span class="stat-number">24/7</span><span class="stat-label">Support</span></div>
         </div>
       </div>
       <div class="hero-image">
-        <div class="hero-image-wrapper">
-          <img src="https://placehold.co/600x500/f0fdf4/22C55E?text=Premium+Luxury+Cleaning" alt="Professional cleaner using eco-friendly products on a luxury sofa">
-        </div>
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='500' viewBox='0 0 600 500'%3E%3Crect width='600' height='500' fill='%23f0fdf4'/%3E%3Ctext x='300' y='250' text-anchor='middle' fill='%2322C55E' font-size='24' font-family='Arial'%3EPremium Luxury Cleaning%3C/text%3E%3C/svg%3E" alt="Premium cleaning service" width="600" height="500" loading="eager" fetchpriority="high">
       </div>
     </div>
   </section>
 
-  <!-- ========== SERVICES SECTION ========== -->
+  <!-- Services Section -->
   <section id="services-section" class="services">
     <div class="container">
       <div class="section-header">
         <div class="section-badge">our expertise</div>
         <h2>Tailored solutions<br>for every surface</h2>
-        <p class="section-subtitle">Precision cleaning with eco-luxury products and certified technicians</p>
       </div>
       <div class="services-grid" id="servicesGrid"></div>
     </div>
   </section>
 
-  <!-- ========== WHY CHOOSE US + COUNTERS ========== -->
-  <section id="why-us" class="why-us">
-    <div class="container">
-      <div class="why-us-grid">
-        <div class="why-us-content">
-          <div class="section-badge">why choose us</div>
-          <h2>White glove <span class="gradient-text">excellence</span></h2>
-          <p>Certified technicians, hospital-grade equipment, and eco-luxury products. We don't just clean — we restore.</p>
-          <div class="trust-badges">
-            <span><i class="fas fa-trophy" aria-hidden="true"></i> Best of Nairobi 2025</span>
-            <span><i class="fab fa-google" aria-hidden="true"></i> 4.9 Google Rating</span>
-            <span><i class="fas fa-certificate" aria-hidden="true"></i> Eco-Certified</span>
-          </div>
-        </div>
-        <div class="counter-grid">
-          <div class="counter-card"><div class="counter-number" data-target="1240">0</div><div class="counter-label">Happy Homes</div></div>
-          <div class="counter-card"><div class="counter-number" data-target="100">0</div><div class="counter-label">Satisfaction %</div></div>
-          <div class="counter-card"><div class="counter-number" data-target="48">0</div><div class="counter-label">Min Response</div></div>
-          <div class="counter-card"><div class="counter-number" data-target="250">0</div><div class="counter-label">5-Star Reviews</div></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== PRICING SECTION ========== -->
+  <!-- Pricing Section -->
   <section id="pricing-section" class="pricing">
     <div class="container">
       <div class="section-header">
@@ -135,7 +107,7 @@
     </div>
   </section>
 
-  <!-- ========== TESTIMONIALS CAROUSEL ========== -->
+  <!-- Testimonials -->
   <section id="testimonials" class="testimonials">
     <div class="container">
       <div class="section-header">
@@ -143,141 +115,76 @@
         <h2>Trusted by Nairobi's elite</h2>
       </div>
       <div class="testimonial-wrapper">
-        <div class="testimonial-track" id="testiTrack" role="region" aria-label="Customer testimonials carousel"></div>
+        <div class="testimonial-track" id="testiTrack"></div>
         <div class="testimonial-controls">
           <button class="testimonial-nav" id="prevBtn" aria-label="Previous testimonial"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
-          <div class="testimonial-dots" id="testiDots" role="tablist" aria-label="Testimonial navigation dots"></div>
+          <div class="testimonial-dots" id="testiDots"></div>
           <button class="testimonial-nav" id="nextBtn" aria-label="Next testimonial"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ========== FAQ ACCORDION ========== -->
-  <section id="faq" class="faq">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-badge">questions</div>
-        <h2>Frequently asked</h2>
-      </div>
-      <div class="faq-grid" id="faqGrid"></div>
-    </div>
-  </section>
-
-  <!-- ========== LEAD CAPTURE + CONTACT ========== -->
+  <!-- Contact Section -->
   <section id="contact-section" class="contact">
     <div class="container">
       <div class="contact-grid">
         <div class="contact-form-wrapper">
           <h3>Request a <span class="gradient-text">bespoke quote</span></h3>
-          <form id="leadForm" class="premium-form">
-            <div>
-              <label for="fullName" class="visually-hidden">Full name</label>
-              <input type="text" id="fullName" placeholder="Full name" required>
-            </div>
-            <div>
-              <label for="emailAddress" class="visually-hidden">Email address</label>
-              <input type="email" id="emailAddress" placeholder="Email address">
-            </div>
-            <div>
-              <label for="phoneNumber" class="visually-hidden">Phone number</label>
-              <input type="tel" id="phoneNumber" placeholder="Phone number" required>
-            </div>
-            <div>
-              <label for="serviceSelect" id="serviceSelectLabel">Select Service</label>
-              <select id="serviceSelect" aria-labelledby="serviceSelectLabel">
-                <option value="">Select Service</option>
-                <option>Home Deep Clean</option>
-                <option>Sofa / Mattress Cleaning</option>
-                <option>Post-Construction</option>
-                <option>Laundry Services</option>
-              </select>
-            </div>
-            <button type="submit" class="btn-primary btn-full" aria-label="Send quote request">Send Request <i class="fas fa-paper-plane" aria-hidden="true"></i></button>
+          <form id="leadForm">
+            <input type="text" id="fullName" placeholder="Full name" required>
+            <input type="email" id="emailAddress" placeholder="Email address">
+            <input type="tel" id="phoneNumber" placeholder="Phone number" required>
+            <label for="serviceSelect" class="visually-hidden">Select Service</label>
+            <select id="serviceSelect">
+              <option>Home Deep Clean</option>
+              <option>Sofa / Mattress Cleaning</option>
+              <option>Post-Construction</option>
+              <option>Laundry Services</option>
+            </select>
+            <button type="submit" class="btn-primary btn-full">Send Request</button>
           </form>
         </div>
         <div class="contact-info">
           <h3>Connect with us</h3>
-          <div class="contact-details">
-            <p><i class="fab fa-whatsapp" aria-hidden="true"></i> +254 758 966 762</p>
-            <p><i class="fas fa-envelope" aria-hidden="true"></i> hello@breezelux.com</p>
-            <p><i class="fas fa-map-pin" aria-hidden="true"></i> Nairobi, Kenya — Westlands</p>
-          </div>
+          <p><i class="fab fa-whatsapp" aria-hidden="true"></i> +254 758 966 762</p>
+          <p><i class="fas fa-envelope" aria-hidden="true"></i> hello@breezelux.com</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== STRONG CTA BANNER ========== -->
-  <section class="cta-banner">
-    <div class="container">
-      <div class="cta-content">
-        <h2>Experience the Breeze Lux difference</h2>
-        <p>Book your first service and receive 15% off — limited offer for new clients</p>
-        <a href="https://wa.me/254758966762" class="btn-accent btn-large" target="_blank" rel="noopener">
-          Claim 15% off <i class="fas fa-arrow-right" aria-hidden="true"></i>
-        </a>
       </div>
     </div>
   </section>
 </main>
 
-<!-- ========== PREMIUM FOOTER ========== -->
+<!-- Footer -->
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="footer-logo"><i class="fas fa-feather-alt" aria-hidden="true"></i> BREEZE LUX</div>
-        <p>Redefining cleanliness with white-glove service and eco-luxury standards.</p>
+        <div class="footer-logo"><i class="fas fa-feather-alt"></i> BREEZE LUX</div>
+        <p>Redefining cleanliness with white-glove service.</p>
         <div class="social-links">
-          <a href="#" aria-label="Follow us on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i><span class="visually-hidden">Instagram</span></a>
-          <a href="#" aria-label="Follow us on Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i><span class="visually-hidden">Facebook</span></a>
-          <a href="#" aria-label="Connect on LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i><span class="visually-hidden">LinkedIn</span></a>
-          <a href="#" aria-label="Follow us on Twitter"><i class="fab fa-x-twitter" aria-hidden="true"></i><span class="visually-hidden">Twitter</span></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
         </div>
       </div>
       <div class="footer-links">
         <h3>Services</h3>
-        <ul>
-          <li><a href="#services-section">Laundry</a></li>
-          <li><a href="#services-section">Deep Cleaning</a></li>
-          <li><a href="#services-section">Sofa Cleaning</a></li>
-          <li><a href="#services-section">Mattress Care</a></li>
-        </ul>
+        <ul><li><a href="#services-section">Laundry</a></li><li><a href="#services-section">Deep Cleaning</a></li></ul>
       </div>
       <div class="footer-links">
         <h3>Support</h3>
-        <ul>
-          <li><a href="#faq">FAQs</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms of Service</a></li>
-          <li><a href="#">Careers</a></li>
-        </ul>
-      </div>
-      <div class="footer-newsletter">
-        <h3>Get 10% off</h3>
-        <p>Subscribe for exclusive offers</p>
-        <div class="newsletter-form">
-          <label for="newsletterEmail" class="visually-hidden">Your email address</label>
-          <input type="email" id="newsletterEmail" placeholder="Your email">
-          <button type="button" aria-label="Subscribe to newsletter"><i class="fas fa-arrow-right" aria-hidden="true"></i></button>
-        </div>
+        <ul><li><a href="#">FAQs</a></li><li><a href="#">Privacy Policy</a></li></ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>© 2025 Breeze Lux Cleaners — Luxury Redefined. All rights reserved.</p>
-    </div>
+    <div class="footer-bottom"><p>© 2025 Breeze Lux Cleaners</p></div>
   </div>
 </footer>
 
-<!-- ========== FLOATING WHATSAPP WIDGET ========== -->
-<button class="floating-wa" id="floatWA" aria-label="WhatsApp 24/7 concierge - click to chat">
-  <i class="fab fa-whatsapp fa-lg" aria-hidden="true"></i>
-  <span>24/7 Concierge</span>
-</button>
+<button class="floating-wa" id="floatWA" aria-label="WhatsApp chat"><i class="fab fa-whatsapp"></i><span>Chat</span></button>
 
-<!-- Scripts -->
-<script src="config.js"></script>
-<script src="script.js"></script>
+<!-- Defer all JavaScript -->
+<script src="script.js" defer></script>
 </body>
 </html>
