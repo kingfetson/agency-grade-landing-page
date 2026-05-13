@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Breeze Lux Cleaners | Luxury Cleaning & Laundry – Nairobi's Premium Service</title>
-  <meta name="description" content="Premium eco-luxury cleaning & laundry services in Nairobi. White glove treatment for homes & businesses.">
+  <meta name="description" content="Premium eco-luxury cleaning & laundry services in Nairobi. White glove treatment for homes & businesses. Book your elite cleaning experience today.">
   
   <!-- Preconnect to critical origins -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,14 +24,14 @@
     body{font-family:'Inter',sans-serif;background:#fff;color:#111827;line-height:1.5}
     .loader{position:fixed;top:0;left:0;width:100%;height:100%;background:#fff;z-index:10000;display:flex;align-items:center;justify-content:center;transition:opacity .3s}
     .loader-hidden{opacity:0;visibility:hidden;pointer-events:none}
-    .navbar{position:fixed;top:20px;left:50%;transform:translateX(-50%);width:90%;max-width:1280px;background:rgba(255,255,255,.96);backdrop-filter:blur(16px);border-radius:80px;z-index:1000;box-shadow:0 4px 20px rgba(0,0,0,.05)}
+    .navbar{position:fixed;top:20px;left:50%;transform:translateX(-50%);width:90%;max-width:1280px;background:rgba(255,255,255,.96);backdrop-filter:blur(16px);border-radius:80px;z-index:1000;box-shadow:0 4px 20px rgba(0,0,0,.05);will-change:transform}
     .container{max-width:1280px;margin:0 auto;padding:0 2rem}
-    .btn-primary{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.5rem;border-radius:60px;font-weight:600;background:#16a34a;color:#fff;text-decoration:none}
-    .btn-primary:hover{background:#128a3a}
+    .btn-primary{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.5rem;border-radius:60px;font-weight:600;background:#0d9488;color:#fff;text-decoration:none}
+    .btn-primary:hover{background:#0f766e}
     .gradient-text{background:linear-gradient(135deg,#22C55E,#16a34a);background-clip:text;-webkit-background-clip:text;color:transparent}
     .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}
     .services-grid, .pricing-grid, .testimonial-wrapper{min-height:400px;contain:layout style paint}
-    img,video,iframe{max-width:100%;height:auto}
+    img,svg,video,iframe{max-width:100%;height:auto;display:block}
   </style>
   
   <!-- Defer non-critical CSS -->
@@ -216,26 +216,11 @@
         <div class="contact-info">
           <h3>Connect With Us</h3>
           <div class="contact-details">
-            <p>
-              <i class="fab fa-whatsapp" aria-hidden="true"></i>
-              <span>+254 758 966 762</span>
-            </p>
-            <p>
-              <i class="fas fa-phone-alt" aria-hidden="true"></i>
-              <span>+254 700 000 000</span>
-            </p>
-            <p>
-              <i class="fas fa-envelope" aria-hidden="true"></i>
-              <span>hello@breezelux.com</span>
-            </p>
-            <p>
-              <i class="fas fa-clock" aria-hidden="true"></i>
-              <span>24/7 Customer Support</span>
-            </p>
-            <p>
-              <i class="fas fa-map-pin" aria-hidden="true"></i>
-              <span>Westlands, Nairobi, Kenya</span>
-            </p>
+            <p><i class="fab fa-whatsapp" aria-hidden="true"></i><span>+254 758 966 762</span></p>
+            <p><i class="fas fa-phone-alt" aria-hidden="true"></i><span>+254 700 000 000</span></p>
+            <p><i class="fas fa-envelope" aria-hidden="true"></i><span>hello@breezelux.com</span></p>
+            <p><i class="fas fa-clock" aria-hidden="true"></i><span>24/7 Customer Support</span></p>
+            <p><i class="fas fa-map-pin" aria-hidden="true"></i><span>Westlands, Nairobi, Kenya</span></p>
           </div>
           
           <div class="map-placeholder">
@@ -245,12 +230,8 @@
           </div>
           
           <div style="margin-top: 1.5rem; text-align: center;">
-            <p style="font-size: 0.85rem; opacity: 0.9;">
-              <i class="fas fa-check-circle" aria-hidden="true"></i> Free quote within 30 minutes
-            </p>
-            <p style="font-size: 0.85rem; opacity: 0.9; margin-top: 0.5rem;">
-              <i class="fas fa-check-circle" aria-hidden="true"></i> No hidden fees
-            </p>
+            <p style="font-size: 0.85rem; opacity: 0.9;"><i class="fas fa-check-circle" aria-hidden="true"></i> Free quote within 30 minutes</p>
+            <p style="font-size: 0.85rem; opacity: 0.9; margin-top: 0.5rem;"><i class="fas fa-check-circle" aria-hidden="true"></i> No hidden fees</p>
           </div>
         </div>
       </div>
@@ -274,30 +255,19 @@
       </div>
       <div class="footer-links">
         <h3>Services</h3>
-        <ul>
-          <li><a href="#services-section">Laundry</a></li>
-          <li><a href="#services-section">Deep Cleaning</a></li>
-        </ul>
+        <ul><li><a href="#services-section">Laundry</a></li><li><a href="#services-section">Deep Cleaning</a></li></ul>
       </div>
       <div class="footer-links">
         <h3>Support</h3>
-        <ul>
-          <li><a href="#">FAQs</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-        </ul>
+        <ul><li><a href="#">FAQs</a></li><li><a href="#">Privacy Policy</a></li></ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>© 2025 Breeze Lux Cleaners — Luxury Redefined. All rights reserved.</p>
-    </div>
+    <div class="footer-bottom"><p>© 2025 Breeze Lux Cleaners — Luxury Redefined. All rights reserved.</p></div>
   </div>
 </footer>
 
 <!-- Floating WhatsApp Button -->
-<button class="floating-wa" id="floatWA" aria-label="WhatsApp 24/7 concierge - click to chat">
-  <i class="fab fa-whatsapp" aria-hidden="true"></i>
-  <span>24/7 Concierge</span>
-</button>
+<button class="floating-wa" id="floatWA" aria-label="WhatsApp 24/7 concierge - click to chat"><i class="fab fa-whatsapp" aria-hidden="true"></i><span>24/7 Concierge</span></button>
 
 <!-- Defer all JavaScript -->
 <script src="script.js" defer></script>
