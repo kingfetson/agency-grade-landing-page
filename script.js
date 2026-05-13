@@ -71,7 +71,7 @@
     `).join('');
   }
   
-  // Render testimonials
+  // Render testimonials with proper ARIA roles
   function renderTestimonials(){
     if(!track) return;
     track.innerHTML = testimonials.map((t,idx) => `
@@ -93,15 +93,22 @@
     updateDots();
   }
   
+  // FIX: Add proper ARIA roles for dots
   function createDots(){
     if(!dotsContainer) return;
     dotsContainer.innerHTML = testimonials.map((_,idx) => `
-      <button class="dot ${idx === currentTestimonial ? 'active' : ''}" data-index="${idx}" aria-label="Go to testimonial ${idx+1}" aria-current="${idx === currentTestimonial}"></button>
+      <button class="dot ${idx === currentTestimonial ? 'active' : ''}" 
+              data-index="${idx}" 
+              role="tab"
+              aria-selected="${idx === currentTestimonial ? 'true' : 'false'}"
+              aria-label="Go to testimonial ${idx+1}"
+              tabindex="${idx === currentTestimonial ? '0' : '-1'}"></button>
     `).join('');
     document.querySelectorAll('.dot').forEach(dot => {
       dot.addEventListener('click',()=>{
         currentTestimonial = parseInt(dot.dataset.index);
         updateCarousel();
+        updateAriaSelected();
         resetAutoSlide();
       });
     });
@@ -110,14 +117,35 @@
   function updateDots(){
     document.querySelectorAll('.dot').forEach((dot,idx)=>{
       dot.classList.toggle('active', idx === currentTestimonial);
-      dot.setAttribute('aria-current', idx === currentTestimonial ? 'true' : 'false');
+      dot.setAttribute('aria-selected', idx === currentTestimonial ? 'true' : 'false');
+      dot.setAttribute('tabindex', idx === currentTestimonial ? '0' : '-1');
     });
   }
   
-  function nextTestimonial(){ currentTestimonial = (currentTestimonial + 1) % testimonials.length; updateCarousel(); }
-  function prevTestimonial(){ currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length; updateCarousel(); }
-  function startAutoSlide(){ testimonialInterval = setInterval(nextTestimonial, 5000); }
-  function resetAutoSlide(){ clearInterval(testimonialInterval); startAutoSlide(); }
+  function updateAriaSelected(){
+    updateDots();
+  }
+  
+  function nextTestimonial(){ 
+    currentTestimonial = (currentTestimonial + 1) % testimonials.length; 
+    updateCarousel();
+    updateAriaSelected();
+  }
+  
+  function prevTestimonial(){ 
+    currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length; 
+    updateCarousel();
+    updateAriaSelected();
+  }
+  
+  function startAutoSlide(){ 
+    testimonialInterval = setInterval(nextTestimonial, 5000); 
+  }
+  
+  function resetAutoSlide(){ 
+    clearInterval(testimonialInterval); 
+    startAutoSlide(); 
+  }
   
   // Intersection Observer for animations
   function initScrollReveal(){
@@ -135,7 +163,10 @@
         menuToggle.setAttribute('aria-expanded', expanded);
       });
       document.querySelectorAll('.nav-links a').forEach(link=>{
-        link.addEventListener('click',()=>{ navMenu.classList.remove('active'); menuToggle.setAttribute('aria-expanded','false'); });
+        link.addEventListener('click',()=>{ 
+          navMenu.classList.remove('active'); 
+          menuToggle.setAttribute('aria-expanded','false'); 
+        });
       });
     }
   }
@@ -164,22 +195,60 @@
     });
   }
   
-  // Form submission
+  // Form submission with validation
   function initLeadForm(){
     if(leadForm){
       leadForm.addEventListener('submit',(e)=>{
         e.preventDefault();
-        const name = document.getElementById('fullName')?.value;
-        if(!name) { alert('Please enter your name.'); return; }
-        alert(`Thank you, ${name}! Our concierge will contact you shortly.`);
+        const name = document.getElementById('fullName')?.value.trim();
+        const phone = document.getElementById('phoneNumber')?.value.trim();
+        
+        if(!name){
+          showFieldError('fullName', 'Please enter your full name');
+          return;
+        }
+        if(!phone){
+          showFieldError('phoneNumber', 'Please enter your phone number');
+          return;
+        }
+        
+        // Remove any existing error/success messages
+        document.querySelectorAll('.form-error, .form-success').forEach(el => el.remove());
+        
+        // Show success message
+        const successDiv = document.createElement('div');
+        successDiv.className = 'form-success';
+        successDiv.innerHTML = `<i class="fas fa-check-circle"></i> Thank you, ${name}! Our concierge will contact you shortly.`;
+        leadForm.appendChild(successDiv);
         leadForm.reset();
+        
+        setTimeout(() => successDiv.remove(), 5000);
       });
     }
+  }
+  
+  // Helper function to show field errors
+  function showFieldError(fieldId, message){
+    const field = document.getElementById(fieldId);
+    if(!field) return;
+    const existingError = field.closest('.form-group')?.querySelector('.form-error');
+    if(existingError) existingError.remove();
+    const errorDiv = document.createElement('div');
+    errorDiv.className = 'form-error';
+    errorDiv.innerHTML = `<i class="fas fa-exclamation-circle"></i> ${message}`;
+    field.closest('.form-group')?.appendChild(errorDiv);
+    field.addEventListener('focus', () => errorDiv.remove(), { once: true });
   }
   
   // WhatsApp button
   if(floatWA){
     floatWA.addEventListener('click',()=> window.open('https://wa.me/254758966762','_blank'));
+    floatWA.addEventListener('keydown', (e) => {
+      if(e.key === 'Enter' || e.key === ' '){
+        e.preventDefault();
+        window.open('https://wa.me/254758966762','_blank');
+      }
+    });
   }
   
   // Initialize
