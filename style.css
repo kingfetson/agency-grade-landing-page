@@ -1,4 +1,3 @@
-```css
 /* ============================================
    BREEZE LUX CLEANERS - PREMIUM STYLESHEET
    Agency-grade | Luxury Service Brand
@@ -26,7 +25,6 @@
   --shadow-lg: 0 20px 40px -12px rgba(0, 0, 0, 0.12);
   --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   --shadow-2xl: 0 35px 60px -15px rgba(0, 0, 0, 0.2);
-  --shadow-glow: 0 0 40px rgba(34, 197, 94, 0.15);
   
   --transition-fast: all 0.2s ease;
   --transition-base: all 0.3s cubic-bezier(0.2, 0.95, 0.4, 1);
@@ -57,6 +55,30 @@ body {
   color: var(--dark);
   line-height: 1.5;
   overflow-x: hidden;
+}
+
+/* Visually hidden but accessible to screen readers */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Focus styles for accessibility */
+a:focus-visible, 
+button:focus-visible, 
+input:focus-visible, 
+select:focus-visible, 
+.testimonial-nav:focus-visible, 
+.dot:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 3px;
 }
 
 /* Custom Scrollbar */
@@ -96,6 +118,11 @@ h2 {
 h3 {
   font-size: 1.5rem;
   margin-bottom: 0.75rem;
+}
+
+h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
 }
 
 p {
@@ -234,6 +261,12 @@ section {
   transition: opacity 0.5s ease, visibility 0.5s;
 }
 
+.loader-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
 .loader-content {
   text-align: center;
 }
@@ -275,7 +308,6 @@ section {
   border-radius: 80px;
   z-index: 1000;
   box-shadow: var(--shadow-md);
-  border: 1px solid rgba(255, 255, 255, 0.6);
   transition: var(--transition-base);
 }
 
@@ -298,13 +330,6 @@ section {
 .logo i {
   color: var(--primary);
   font-size: 1.5rem;
-}
-
-.logo span {
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
 }
 
 .nav-links {
@@ -370,42 +395,6 @@ section {
   position: relative;
   overflow: hidden;
   padding-top: 5rem;
-}
-
-.floating-shape {
-  position: absolute;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(34, 197, 94, 0.06) 0%, transparent 70%);
-  pointer-events: none;
-}
-
-.shape-1 {
-  width: 400px;
-  height: 400px;
-  top: -100px;
-  right: -100px;
-  animation: float 15s infinite ease-in-out;
-}
-
-.shape-2 {
-  width: 250px;
-  height: 250px;
-  bottom: 10%;
-  left: -80px;
-  animation: float 12s infinite reverse;
-}
-
-.shape-3 {
-  width: 180px;
-  height: 180px;
-  top: 30%;
-  left: 20%;
-  animation: float 10s infinite;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-30px) rotate(5deg); }
 }
 
 .hero-grid {
@@ -495,13 +484,6 @@ section {
   display: block;
 }
 
-.image-glow {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(34,197,94,0.1) 0%, transparent 50%);
-  pointer-events: none;
-}
-
 /* ---------- SERVICES SECTION ---------- */
 .services {
   background: var(--white);
@@ -509,11 +491,11 @@ section {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
 }
 
-.service-card-premium {
+.service-card {
   background: var(--white);
   border-radius: var(--border-radius-xl);
   padding: 2rem;
@@ -523,7 +505,7 @@ section {
   text-align: center;
 }
 
-.service-card-premium:hover {
+.service-card:hover {
   transform: translateY(-10px);
   box-shadow: var(--shadow-xl);
   border-color: var(--primary);
@@ -535,87 +517,13 @@ section {
   margin-bottom: 1.25rem;
 }
 
-.service-card-premium h3 {
+.service-card h3 {
   margin-bottom: 0.5rem;
 }
 
-.service-card-premium p {
+.service-card p {
   font-size: 0.9rem;
   margin-top: 0.5rem;
-}
-
-/* ---------- BEFORE/AFTER SLIDER ---------- */
-.showcase {
-  background: var(--gray-50);
-}
-
-.comparison-slider {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.slider-container {
-  position: relative;
-  border-radius: var(--border-radius-xl);
-  overflow: hidden;
-  box-shadow: var(--shadow-2xl);
-}
-
-.slider-before-img {
-  width: 100%;
-  display: block;
-}
-
-.slider-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.slider-overlay img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  left: 0;
-}
-
-.slider-handle {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 4px;
-  height: 100%;
-  background: var(--white);
-  cursor: ew-resize;
-  z-index: 10;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
-}
-
-.handle-circle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 44px;
-  height: 44px;
-  background: var(--white);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: var(--shadow-lg);
-  color: var(--primary);
-}
-
-.slider-caption {
-  text-align: center;
-  margin-top: 1rem;
-  font-size: 0.85rem;
-  color: var(--gray-600);
 }
 
 /* ---------- WHY US SECTION ---------- */
@@ -683,48 +591,6 @@ section {
 .counter-label {
   font-size: 0.9rem;
   color: var(--gray-600);
-}
-
-/* ---------- SERVICE TYPES ---------- */
-.service-types {
-  background: var(--gray-50);
-  text-align: center;
-}
-
-.type-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  margin-top: 3rem;
-}
-
-.type-card {
-  flex: 1;
-  background: var(--white);
-  border-radius: var(--border-radius-xl);
-  padding: 2rem;
-  text-align: center;
-  transition: var(--transition-base);
-  box-shadow: var(--shadow-sm);
-}
-
-.type-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
-}
-
-.type-icon {
-  font-size: 2.5rem;
-  color: var(--primary);
-  margin-bottom: 1rem;
-}
-
-.type-link {
-  display: inline-block;
-  margin-top: 1rem;
-  color: var(--primary);
-  text-decoration: none;
-  font-weight: 600;
 }
 
 /* ---------- PRICING SECTION ---------- */
@@ -817,6 +683,7 @@ section {
 .testimonial-rating {
   color: var(--accent);
   margin-bottom: 1rem;
+  font-size: 1.2rem;
 }
 
 .testimonial-text {
@@ -828,6 +695,7 @@ section {
 .testimonial-author {
   font-weight: 700;
   margin-top: 1rem;
+  font-size: 1.1rem;
 }
 
 .testimonial-controls {
@@ -839,13 +707,16 @@ section {
 }
 
 .testimonial-nav {
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   background: var(--white);
   border: 1px solid var(--gray-200);
   cursor: pointer;
   transition: var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .testimonial-nav:hover {
@@ -860,71 +731,20 @@ section {
 }
 
 .dot {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background: var(--gray-300);
   cursor: pointer;
   transition: var(--transition-fast);
+  border: none;
+  padding: 0;
 }
 
 .dot.active {
   background: var(--primary);
   width: 24px;
   border-radius: 10px;
-}
-
-/* ---------- PROCESS STEPS ---------- */
-.process {
-  background: var(--white);
-}
-
-.process-steps {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-}
-
-.step {
-  flex: 1;
-  min-width: 200px;
-  text-align: center;
-  padding: 2rem;
-  background: var(--gray-50);
-  border-radius: var(--border-radius-xl);
-  transition: var(--transition-base);
-}
-
-.step:hover {
-  transform: translateY(-5px);
-  background: var(--white);
-  box-shadow: var(--shadow-lg);
-}
-
-.step-number {
-  font-size: 2rem;
-  font-weight: 800;
-  color: var(--primary);
-  opacity: 0.5;
-}
-
-.step-icon {
-  font-size: 2rem;
-  color: var(--primary);
-  margin: 1rem 0;
-}
-
-.step-arrow {
-  font-size: 1.5rem;
-  color: var(--gray-400);
-}
-
-@media (max-width: 768px) {
-  .step-arrow {
-    display: none;
-  }
 }
 
 /* ---------- FAQ SECTION ---------- */
@@ -942,6 +762,7 @@ section {
   border-radius: var(--border-radius-lg);
   margin-bottom: 1rem;
   overflow: hidden;
+  transition: var(--transition-fast);
 }
 
 .faq-question {
@@ -1028,18 +849,6 @@ section {
   width: 24px;
 }
 
-.map-placeholder {
-  background: var(--gray-200);
-  border-radius: var(--border-radius-xl);
-  padding: 2rem;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--gray-600);
-}
-
 /* ---------- CTA BANNER ---------- */
 .cta-banner {
   background: var(--dark);
@@ -1115,6 +924,7 @@ section {
   justify-content: center;
   color: var(--white);
   transition: var(--transition-fast);
+  text-decoration: none;
 }
 
 .social-links a:hover {
@@ -1122,10 +932,10 @@ section {
   transform: translateY(-3px);
 }
 
-.footer-links h4 {
+.footer-links h3 {
   color: var(--white);
   margin-bottom: 1rem;
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 
 .footer-links ul {
@@ -1183,18 +993,6 @@ section {
   gap: 1rem;
 }
 
-.trust-footer {
-  display: flex;
-  gap: 1rem;
-}
-
-.trust-footer span {
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-  font-size: 0.8rem;
-}
-
 /* ---------- FLOATING WHATSAPP ---------- */
 .floating-wa {
   position: fixed;
@@ -1212,6 +1010,7 @@ section {
   font-weight: 600;
   box-shadow: var(--shadow-xl);
   transition: var(--transition-base);
+  border: none;
 }
 
 .floating-wa:hover {
@@ -1230,4 +1029,3 @@ section {
   opacity: 1;
   transform: translateY(0);
 }
-```
