@@ -26,23 +26,23 @@
 </div>
 
 <!-- Glassmorphism Navigation Bar -->
-<nav class="navbar" id="navbar">
+<nav class="navbar" id="navbar" aria-label="Main navigation">
   <div class="nav-container">
     <div class="logo">
-      <i class="fas fa-feather-alt"></i> 
+      <i class="fas fa-feather-alt" aria-hidden="true"></i> 
       <span>BREEZE LUX</span>
     </div>
-    <div class="menu-icon" id="menuToggle">
-      <i class="fas fa-bars"></i>
-    </div>
+    <button class="menu-icon" id="menuToggle" aria-label="Menu" aria-expanded="false" style="background: none; border: none;">
+      <i class="fas fa-bars" aria-hidden="true"></i>
+    </button>
     <div class="nav-links" id="navMenu">
       <a href="#home">Home</a>
       <a href="#services-section">Services</a>
       <a href="#work">Transform</a>
       <a href="#pricing-section">Pricing</a>
       <a href="#contact-section">Contact</a>
-      <a href="https://wa.me/254758966762" class="btn-glass btn-highlight" target="_blank">
-        <i class="fab fa-whatsapp"></i> Book Now
+      <a href="https://wa.me/254758966762" class="btn-glass btn-highlight" target="_blank" rel="noopener">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i> Book Now
       </a>
     </div>
   </div>
@@ -51,14 +51,10 @@
 <main>
   <!-- ========== HERO SECTION ========== -->
   <section id="home" class="hero">
-    <div class="floating-shape shape-1"></div>
-    <div class="floating-shape shape-2"></div>
-    <div class="floating-shape shape-3"></div>
-    
     <div class="container hero-grid">
       <div class="hero-content">
         <div class="hero-badge">
-          <i class="fas fa-star-of-life"></i> NAIROBI'S ELITE CLEANING
+          <i class="fas fa-star-of-life" aria-hidden="true"></i> NAIROBI'S ELITE CLEANING
         </div>
         <h1>
           Where luxury meets<br>
@@ -69,34 +65,24 @@
           Eco-luxury service trusted by 500+ elite clients.
         </p>
         <div class="hero-buttons">
-          <a href="https://wa.me/254758966762" class="btn-primary btn-large" target="_blank">
-            <i class="fab fa-whatsapp"></i> WhatsApp Concierge
+          <a href="https://wa.me/254758966762" class="btn-primary btn-large" target="_blank" rel="noopener">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp Concierge
           </a>
           <a href="#contact-section" class="btn-secondary btn-large">
-            Free Quote <i class="fas fa-arrow-right"></i>
+            Free Quote <i class="fas fa-arrow-right" aria-hidden="true"></i>
           </a>
         </div>
         <div class="hero-stats">
-          <div class="stat-item">
-            <span class="stat-number">500+</span>
-            <span class="stat-label">Projects</span>
-          </div>
+          <div class="stat-item"><span class="stat-number">500+</span><span class="stat-label">Projects</span></div>
           <div class="stat-divider"></div>
-          <div class="stat-item">
-            <span class="stat-number">4.98</span>
-            <span class="stat-label">★ Reviews</span>
-          </div>
+          <div class="stat-item"><span class="stat-number">4.98</span><span class="stat-label">★ Reviews</span></div>
           <div class="stat-divider"></div>
-          <div class="stat-item">
-            <span class="stat-number">24/7</span>
-            <span class="stat-label">Support</span>
-          </div>
+          <div class="stat-item"><span class="stat-number">24/7</span><span class="stat-label">Support</span></div>
         </div>
       </div>
       <div class="hero-image">
         <div class="hero-image-wrapper">
-          <img src="https://placehold.co/600x500/f0fdf4/22C55E?text=Premium+Luxury+Cleaning" alt="Luxury cleaning service">
-          <div class="image-glow"></div>
+          <img src="https://placehold.co/600x500/f0fdf4/22C55E?text=Premium+Luxury+Cleaning" alt="Professional cleaner using eco-friendly products on a luxury sofa">
         </div>
       </div>
     </div>
@@ -114,30 +100,6 @@
     </div>
   </section>
 
-  <!-- ========== BEFORE & AFTER SHOWCASE ========== -->
-  <section id="work" class="showcase">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-badge">the proof</div>
-        <h2>Deep cleaning<br><span class="gradient-text">transformation</span></h2>
-      </div>
-      <div class="comparison-slider" id="premiumSlider">
-        <div class="slider-container">
-          <img src="https://placehold.co/1000x600/e5e7eb/FFFFFF?text=AFTER+SANITIZED" alt="After cleaning" class="slider-before-img" style="width:100%; display:block;">
-          <div class="slider-overlay" id="dragOverlay">
-            <img src="https://placehold.co/1000x600/9ca3af/FFFFFF?text=BEFORE+DIRTY" alt="Before cleaning" style="width:100%; height:100%; object-fit:cover; position:absolute; left:0;">
-          </div>
-          <div class="slider-handle" id="dragHandle">
-            <div class="handle-circle">
-              <i class="fas fa-arrows-alt-h"></i>
-            </div>
-          </div>
-        </div>
-        <p class="slider-caption">← Drag to see the transformation →</p>
-      </div>
-    </div>
-  </section>
-
   <!-- ========== WHY CHOOSE US + COUNTERS ========== -->
   <section id="why-us" class="why-us">
     <div class="container">
@@ -147,49 +109,16 @@
           <h2>White glove <span class="gradient-text">excellence</span></h2>
           <p>Certified technicians, hospital-grade equipment, and eco-luxury products. We don't just clean — we restore.</p>
           <div class="trust-badges">
-            <span><i class="fas fa-trophy"></i> Best of Nairobi 2025</span>
-            <span><i class="fab fa-google"></i> 4.9 Google Rating</span>
-            <span><i class="fas fa-certificate"></i> Eco-Certified</span>
+            <span><i class="fas fa-trophy" aria-hidden="true"></i> Best of Nairobi 2025</span>
+            <span><i class="fab fa-google" aria-hidden="true"></i> 4.9 Google Rating</span>
+            <span><i class="fas fa-certificate" aria-hidden="true"></i> Eco-Certified</span>
           </div>
         </div>
         <div class="counter-grid">
-          <div class="counter-card">
-            <div class="counter-number" data-target="1240">0</div>
-            <div class="counter-label">Happy Homes</div>
-          </div>
-          <div class="counter-card">
-            <div class="counter-number" data-target="100">0</div>
-            <div class="counter-label">Satisfaction %</div>
-          </div>
-          <div class="counter-card">
-            <div class="counter-number" data-target="48">0</div>
-            <div class="counter-label">Min Response</div>
-          </div>
-          <div class="counter-card">
-            <div class="counter-number" data-target="250">0</div>
-            <div class="counter-label">5-Star Reviews</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== COMMERCIAL + RESIDENTIAL ========== -->
-  <section id="service-types" class="service-types">
-    <div class="container">
-      <h2>Serving <span class="gradient-text">Home & Business</span></h2>
-      <div class="type-grid">
-        <div class="type-card">
-          <div class="type-icon"><i class="fas fa-home"></i></div>
-          <h3>Residential</h3>
-          <p>Deep clean, move-out, recurring luxury cleaning for discerning homeowners.</p>
-          <a href="#contact-section" class="type-link">Learn more →</a>
-        </div>
-        <div class="type-card">
-          <div class="type-icon"><i class="fas fa-building"></i></div>
-          <h3>Commercial</h3>
-          <p>Offices, retail, post-construction, and event cleaning for businesses.</p>
-          <a href="#contact-section" class="type-link">Learn more →</a>
+          <div class="counter-card"><div class="counter-number" data-target="1240">0</div><div class="counter-label">Happy Homes</div></div>
+          <div class="counter-card"><div class="counter-number" data-target="100">0</div><div class="counter-label">Satisfaction %</div></div>
+          <div class="counter-card"><div class="counter-number" data-target="48">0</div><div class="counter-label">Min Response</div></div>
+          <div class="counter-card"><div class="counter-number" data-target="250">0</div><div class="counter-label">5-Star Reviews</div></div>
         </div>
       </div>
     </div>
@@ -214,43 +143,11 @@
         <h2>Trusted by Nairobi's elite</h2>
       </div>
       <div class="testimonial-wrapper">
-        <div class="testimonial-track" id="testiTrack"></div>
+        <div class="testimonial-track" id="testiTrack" role="region" aria-label="Customer testimonials carousel"></div>
         <div class="testimonial-controls">
-          <button class="testimonial-nav" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
-          <div class="testimonial-dots" id="testiDots"></div>
-          <button class="testimonial-nav" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== PROCESS SECTION ========== -->
-  <section id="process" class="process">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-badge">how it works</div>
-        <h2>Simple <span class="gradient-text">3-step</span> process</h2>
-      </div>
-      <div class="process-steps">
-        <div class="step">
-          <div class="step-number">01</div>
-          <div class="step-icon"><i class="fas fa-calendar-plus"></i></div>
-          <h3>Book</h3>
-          <p>WhatsApp or online form — 2 minutes</p>
-        </div>
-        <div class="step-arrow"><i class="fas fa-arrow-right"></i></div>
-        <div class="step">
-          <div class="step-number">02</div>
-          <div class="step-icon"><i class="fas fa-brush"></i></div>
-          <h3>We Clean</h3>
-          <p>Specialist team arrives fully equipped</p>
-        </div>
-        <div class="step-arrow"><i class="fas fa-arrow-right"></i></div>
-        <div class="step">
-          <div class="step-number">03</div>
-          <div class="step-icon"><i class="fas fa-smile-wink"></i></div>
-          <h3>Enjoy</h3>
-          <p>Sparkling guarantee & follow-up</p>
+          <button class="testimonial-nav" id="prevBtn" aria-label="Previous testimonial"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+          <div class="testimonial-dots" id="testiDots" role="tablist" aria-label="Testimonial navigation dots"></div>
+          <button class="testimonial-nav" id="nextBtn" aria-label="Next testimonial"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
         </div>
       </div>
     </div>
@@ -263,29 +160,7 @@
         <div class="section-badge">questions</div>
         <h2>Frequently asked</h2>
       </div>
-      <div class="faq-grid">
-        <div class="faq-item">
-          <div class="faq-question">
-            <span>What products do you use?</span>
-            <i class="fas fa-chevron-down"></i>
-          </div>
-          <div class="faq-answer">We use eco-friendly, hospital-grade disinfectants and steam technology — safe for children and pets.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">
-            <span>Do you cover all Nairobi?</span>
-            <i class="fas fa-chevron-down"></i>
-          </div>
-          <div class="faq-answer">Yes — Westlands, Karen, Lavington, Kilimani, Runda, and CBD included with no travel fees.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">
-            <span>Are your teams insured?</span>
-            <i class="fas fa-chevron-down"></i>
-          </div>
-          <div class="faq-answer">Fully insured and bonded. Every team member undergoes background verification.</div>
-        </div>
-      </div>
+      <div class="faq-grid" id="faqGrid"></div>
     </div>
   </section>
 
@@ -296,29 +171,37 @@
         <div class="contact-form-wrapper">
           <h3>Request a <span class="gradient-text">bespoke quote</span></h3>
           <form id="leadForm" class="premium-form">
-            <input type="text" placeholder="Full name" required>
-            <input type="email" placeholder="Email address">
-            <input type="tel" placeholder="Phone number" required>
-            <select>
-              <option>Select Service</option>
-              <option>Home Deep Clean</option>
-              <option>Sofa / Mattress Cleaning</option>
-              <option>Post-Construction</option>
-              <option>Laundry Services</option>
-            </select>
-            <button type="submit" class="btn-primary btn-full">Send Request <i class="fas fa-paper-plane"></i></button>
+            <div>
+              <label for="fullName" class="visually-hidden">Full name</label>
+              <input type="text" id="fullName" placeholder="Full name" required>
+            </div>
+            <div>
+              <label for="emailAddress" class="visually-hidden">Email address</label>
+              <input type="email" id="emailAddress" placeholder="Email address">
+            </div>
+            <div>
+              <label for="phoneNumber" class="visually-hidden">Phone number</label>
+              <input type="tel" id="phoneNumber" placeholder="Phone number" required>
+            </div>
+            <div>
+              <label for="serviceSelect" id="serviceSelectLabel">Select Service</label>
+              <select id="serviceSelect" aria-labelledby="serviceSelectLabel">
+                <option value="">Select Service</option>
+                <option>Home Deep Clean</option>
+                <option>Sofa / Mattress Cleaning</option>
+                <option>Post-Construction</option>
+                <option>Laundry Services</option>
+              </select>
+            </div>
+            <button type="submit" class="btn-primary btn-full" aria-label="Send quote request">Send Request <i class="fas fa-paper-plane" aria-hidden="true"></i></button>
           </form>
         </div>
         <div class="contact-info">
           <h3>Connect with us</h3>
           <div class="contact-details">
-            <p><i class="fab fa-whatsapp"></i> +254 758 966 762</p>
-            <p><i class="fas fa-envelope"></i> hello@breezelux.com</p>
-            <p><i class="fas fa-map-pin"></i> Nairobi, Kenya — Westlands</p>
-          </div>
-          <div class="map-placeholder">
-            <i class="fas fa-map-marked-alt fa-2x"></i>
-            <span>Premium service coverage map</span>
+            <p><i class="fab fa-whatsapp" aria-hidden="true"></i> +254 758 966 762</p>
+            <p><i class="fas fa-envelope" aria-hidden="true"></i> hello@breezelux.com</p>
+            <p><i class="fas fa-map-pin" aria-hidden="true"></i> Nairobi, Kenya — Westlands</p>
           </div>
         </div>
       </div>
@@ -331,8 +214,8 @@
       <div class="cta-content">
         <h2>Experience the Breeze Lux difference</h2>
         <p>Book your first service and receive 15% off — limited offer for new clients</p>
-        <a href="https://wa.me/254758966762" class="btn-accent btn-large" target="_blank">
-          Claim 15% off <i class="fas fa-arrow-right"></i>
+        <a href="https://wa.me/254758966762" class="btn-accent btn-large" target="_blank" rel="noopener">
+          Claim 15% off <i class="fas fa-arrow-right" aria-hidden="true"></i>
         </a>
       </div>
     </div>
@@ -344,17 +227,17 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="footer-logo"><i class="fas fa-feather-alt"></i> BREEZE LUX</div>
+        <div class="footer-logo"><i class="fas fa-feather-alt" aria-hidden="true"></i> BREEZE LUX</div>
         <p>Redefining cleanliness with white-glove service and eco-luxury standards.</p>
         <div class="social-links">
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" aria-label="Follow us on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i><span class="visually-hidden">Instagram</span></a>
+          <a href="#" aria-label="Follow us on Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i><span class="visually-hidden">Facebook</span></a>
+          <a href="#" aria-label="Connect on LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i><span class="visually-hidden">LinkedIn</span></a>
+          <a href="#" aria-label="Follow us on Twitter"><i class="fab fa-x-twitter" aria-hidden="true"></i><span class="visually-hidden">Twitter</span></a>
         </div>
       </div>
       <div class="footer-links">
-        <h4>Services</h4>
+        <h3>Services</h3>
         <ul>
           <li><a href="#services-section">Laundry</a></li>
           <li><a href="#services-section">Deep Cleaning</a></li>
@@ -363,7 +246,7 @@
         </ul>
       </div>
       <div class="footer-links">
-        <h4>Support</h4>
+        <h3>Support</h3>
         <ul>
           <li><a href="#faq">FAQs</a></li>
           <li><a href="#">Privacy Policy</a></li>
@@ -372,31 +255,29 @@
         </ul>
       </div>
       <div class="footer-newsletter">
-        <h4>Get 10% off</h4>
+        <h3>Get 10% off</h3>
         <p>Subscribe for exclusive offers</p>
         <div class="newsletter-form">
-          <input type="email" placeholder="Your email">
-          <button><i class="fas fa-arrow-right"></i></button>
+          <label for="newsletterEmail" class="visually-hidden">Your email address</label>
+          <input type="email" id="newsletterEmail" placeholder="Your email">
+          <button type="button" aria-label="Subscribe to newsletter"><i class="fas fa-arrow-right" aria-hidden="true"></i></button>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
       <p>© 2025 Breeze Lux Cleaners — Luxury Redefined. All rights reserved.</p>
-      <div class="trust-footer">
-        <span><i class="fas fa-shield-alt"></i> Insured</span>
-        <span><i class="fas fa-leaf"></i> Eco-Friendly</span>
-      </div>
     </div>
   </div>
 </footer>
 
 <!-- ========== FLOATING WHATSAPP WIDGET ========== -->
-<div class="floating-wa" id="floatWA">
-  <i class="fab fa-whatsapp fa-lg"></i>
+<button class="floating-wa" id="floatWA" aria-label="WhatsApp 24/7 concierge - click to chat">
+  <i class="fab fa-whatsapp fa-lg" aria-hidden="true"></i>
   <span>24/7 Concierge</span>
-</div>
+</button>
 
-<!-- Main JavaScript -->
+<!-- Scripts -->
+<script src="config.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
