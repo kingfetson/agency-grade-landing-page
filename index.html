@@ -125,35 +125,131 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact-section" class="contact">
-    <div class="container">
-      <div class="contact-grid">
-        <div class="contact-form-wrapper">
-          <h3>Request a <span class="gradient-text">bespoke quote</span></h3>
-          <form id="leadForm">
-            <input type="text" id="fullName" placeholder="Full name" required>
-            <input type="email" id="emailAddress" placeholder="Email address">
-            <input type="tel" id="phoneNumber" placeholder="Phone number" required>
-            <label for="serviceSelect" class="visually-hidden">Select Service</label>
-            <select id="serviceSelect">
-              <option>Home Deep Clean</option>
-              <option>Sofa / Mattress Cleaning</option>
-              <option>Post-Construction</option>
-              <option>Laundry Services</option>
-            </select>
-            <button type="submit" class="btn-primary btn-full">Send Request</button>
-          </form>
+ <!-- ========== LEAD CAPTURE + CONTACT - PROFESSIONALLY FORMATTED ========== -->
+<section id="contact-section" class="contact">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">get in touch</div>
+      <h2>Request a <span class="gradient-text">bespoke quote</span></h2>
+      <p class="section-subtitle">Fill out the form below and our concierge will respond within 30 minutes</p>
+    </div>
+    
+    <div class="contact-grid">
+      <!-- Contact Form -->
+      <div class="contact-form-wrapper">
+        <h3>Start Your <span class="gradient-text">Journey</span></h3>
+        <form id="leadForm" class="premium-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fullName">Full Name <span class="required">*</span></label>
+              <div class="input-with-icon">
+                <i class="fas fa-user" aria-hidden="true"></i>
+                <input type="text" id="fullName" name="fullName" placeholder="John Doe" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="phoneNumber">Phone Number <span class="required">*</span></label>
+              <div class="input-with-icon">
+                <i class="fas fa-phone" aria-hidden="true"></i>
+                <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="+254 700 000 000" required>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="emailAddress">Email Address</label>
+              <div class="input-with-icon">
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+                <input type="email" id="emailAddress" name="emailAddress" placeholder="john@example.com">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="serviceSelect">Select Service <span class="required">*</span></label>
+              <div class="input-with-icon">
+                <i class="fas fa-broom" aria-hidden="true"></i>
+                <select id="serviceSelect" name="service" required>
+                  <option value="">Choose a service</option>
+                  <option>Home Deep Clean</option>
+                  <option>Sofa / Mattress Cleaning</option>
+                  <option>Post-Construction</option>
+                  <option>Laundry Services</option>
+                  <option>Commercial Cleaning</option>
+                  <option>Event Cleanup</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="propertyAddress">Property Address</label>
+            <div class="input-with-icon">
+              <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+              <input type="text" id="propertyAddress" name="address" placeholder="Westlands, Nairobi">
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Additional Details</label>
+            <textarea id="message" name="message" rows="3" placeholder="Tell us about your specific requirements..."></textarea>
+          </div>
+          
+          <button type="submit" class="btn-primary btn-full">
+            <i class="fas fa-paper-plane" aria-hidden="true"></i>
+            Send Request
+            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </button>
+          
+          <p style="font-size: 0.8rem; color: var(--gray-600); text-align: center; margin-top: 1rem;">
+            <i class="fas fa-lock" aria-hidden="true"></i> Your information is secure and confidential
+          </p>
+        </form>
+      </div>
+      
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <h3>Connect With Us</h3>
+        <div class="contact-details">
+          <p>
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            <span>+254 758 966 762</span>
+          </p>
+          <p>
+            <i class="fas fa-phone-alt" aria-hidden="true"></i>
+            <span>+254 700 000 000</span>
+          </p>
+          <p>
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+            <span>hello@breezelux.com</span>
+          </p>
+          <p>
+            <i class="fas fa-clock" aria-hidden="true"></i>
+            <span>24/7 Customer Support</span>
+          </p>
+          <p>
+            <i class="fas fa-map-pin" aria-hidden="true"></i>
+            <span>Westlands, Nairobi, Kenya</span>
+          </p>
         </div>
-        <div class="contact-info">
-          <h3>Connect with us</h3>
-          <p><i class="fab fa-whatsapp" aria-hidden="true"></i> +254 758 966 762</p>
-          <p><i class="fas fa-envelope" aria-hidden="true"></i> hello@breezelux.com</p>
+        
+        <div class="map-placeholder">
+          <i class="fas fa-map-marked-alt" aria-hidden="true"></i>
+          <span>Premium Service Coverage Area</span>
+          <small style="display: block; margin-top: 0.5rem; opacity: 0.8;">Westlands • Karen • Lavington • Kilimani • Runda • CBD</small>
+        </div>
+        
+        <div style="margin-top: 1.5rem; text-align: center;">
+          <p style="font-size: 0.85rem; opacity: 0.9;">
+            <i class="fas fa-check-circle" aria-hidden="true"></i> Free quote within 30 minutes
+          </p>
+          <p style="font-size: 0.85rem; opacity: 0.9; margin-top: 0.5rem;">
+            <i class="fas fa-check-circle" aria-hidden="true"></i> No hidden fees
+          </p>
         </div>
       </div>
     </div>
-  </section>
-</main>
+  </div>
+</section>
 
 <!-- Footer -->
 <footer class="footer">
